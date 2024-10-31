@@ -1,0 +1,30 @@
+# Node.js specific files
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Editor files
+.DS_Store
+.idea
+.vscode/
+*.suo
+*.ntvs*
+*.ncb*
+*.sdf*
+*.suo
+*.tmp*
+*.bak*
+*.orig*
+*.bkp*
+*.old*
+
+# TypeScript specific files
+*.tsbuildinfo
+
+# Test files
+coverage/
+
+# Logs and build artifacts
+logs/
+build/
+dist/
