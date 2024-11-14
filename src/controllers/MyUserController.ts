@@ -16,7 +16,26 @@ const createCurentUser=async (req:Request,res:Response):Promise<any>=>{
         res.status(500).json({message:"error creating user"})
     }
 }
+const updateCurentUser =async (req:Request,res:Response):Promise<any>=>{
+    try {
+        const {adressLine,name,country,city}=req.body;
+        const user =await User.findById(req.userId)
+        if (!user){
+            return res.status(404).json({message:"user not found"})
+        }
+        user.adressLine=adressLine;
+        user.name=name;
+        user.country=country;
+        user.city=city
+        await user.save()
+
+    } catch (error) {
+        return res.sendStatus(401)
+    }
+
+}
 
 export default{
     createCurentUser,
+    updateCurentUser,
 }
