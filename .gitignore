@@ -1,3 +1,4 @@
+.env
 # Node.js specific files
 node_modules/
 npm-debug.log*

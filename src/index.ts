@@ -11,6 +11,11 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
 const app = express()
 app.use(cors())
 app.use(express.json())
+
+app.get("/health",async(req:Request,res:Response)=>{
+    res.send({message:"health is ok!"})
+})
+
 app.use('/api/my/user' ,myUserRouter);
 
 app.listen(5000,()=>{
