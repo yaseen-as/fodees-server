@@ -1,7 +1,7 @@
 import express from 'express';
 import MyUserController from '../controllers/MyUserController';
 import { jwtCheck, jwtParser } from '../midilware/auth';
-import {validateMyUserRequest} from '../midilware/validateuser';
+import {validateMyUserRequest} from '../midilware/validate';
 
 const router=express.Router()
 
