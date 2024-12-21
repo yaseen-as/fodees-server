@@ -13,8 +13,11 @@ const upload=multer({
         fileSize:5 * 1024 *1024,
     },
 });
+router.patch('/order/:orderId/status',jwtCheck,jwtParser,MyRestourentController.updateOrderStatus)
+router.get('/order',jwtCheck,jwtParser,MyRestourentController.getMyRestaurantOrders)
 router.get('/',jwtCheck,jwtParser,MyRestourentController.getMyRestourent)
-router.post("/",upload.single("imageFile"),jwtCheck,jwtParser,validateMyRestaurantRequest,MyRestourentController.createMyRestourent);
+router.post("/",upload.single("imageFile"),jwtCheck,jwtParser,MyRestourentController.createMyRestourent);
+// router.post("/",upload.single("imageFile"),jwtCheck,jwtParser,validateMyRestaurantRequest,MyRestourentController.createMyRestourent);
 router.put("/",upload.single("imageFile"),jwtCheck,jwtParser,validateMyRestaurantRequest,MyRestourentController.updateMyRestourent);
 
 export default router;
